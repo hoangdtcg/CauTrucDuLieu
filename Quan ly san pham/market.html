@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="style market.css">
+</head>
+<body>
+    <h1 style="background-color: red"> The MARKET</h1>
+    <div class="container">
+           <form action="javascript:void(0);" method="POST" style="font-size: 300%" onsubmit="app.add()">
+               <input size="40"  type="text" id="addName" placeholder="name"><br/>
+                <input type="submit" value="Submit">
+           </form>
+    </div>
+    <h3>Display all product</h3>
+    <table>
+
+        <tr>
+            <th style="text-align: left"> Product Name</th>
+            <th style="text-align: right; color:brown"  colspan="2" >
+                <p id="counter"> 9 Products</p>
+            </th>
+
+        </tr>
+        <tbody id="products">
+        </tbody>
+    </table>
+                <script>
+                    let app = function () {
+                        this.el = document.getElementById("products");
+                        this.product = ['Sony Xperia', 'SamSung Galaxy','Nokia 6', 'IphoneXs',
+                                        'Xiaomi Red','ip5','ip7','op8',"op9"];
+
+                        this.count = function (data) {
+                            let el = document.getElementById("counter");
+                            let name = 'product';
+                            if(data){
+                                name = 'products';
+                            }
+                            el.innerHTML = data + ' ' + name;
+                        }else{
+                            el.innerHTML = "NO " + name;
+                        }
+
+                    };
+                </script>
+</body>
+</html>
