@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>guess number</title>
+</head>
+<body>
+<script>
+    let GuessNumber = function (data) {
+        let answer = Math.floor(Math.random() * 100);
+        while (data != answer) {
+            if (data < answer) {
+                alert('Answer: too low. Try again');
+                data = prompt('your answer : ');
+            } else {
+                alert('Answer: too high. Try again');
+                data = prompt('your answer : ');
+            }
+        }
+        alert('you won');
+    };
+    let num = prompt('your answer : ');
+    GuessNumber(num)
+</script>
+</body>
+</html>

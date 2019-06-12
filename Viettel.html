@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+List Phone number: <div id="phone"></div> <br>
+Result: <div id="result"></div>
+<script>
+    function checkPhoneNumber(arr, data) {
+        let count = 0;
+        let Result = [];
+        for (let i = 0; i < arr.length; i ++) {
+                for (let j = 0; j < data.length; j ++) {
+                    if (data[j].length == 10) {
+                        let position = data[j].search(arr[i]);
+                        if (position == 0) {
+                            count ++;
+                            Result.push(data[j]);
+                        }
+                    }
+                }
+            }
+        if (count == 0 ) {
+            document.getElementById('result').innerHTML = 'not find phone number of viettel';
+        } else {
+            document.getElementById('result').innerHTML = 'Phone number of viettel: '+ Result ;
+        }
+    }
+    let viettel = ['033','034','035','036','037','038','039','096','097','098','086'];
+    let phonenumber = ['0865210368','0343079043','01223231446','091363214'];
+    document.getElementById('phone').innerHTML = phonenumber ;
+    checkPhoneNumber(viettel, phonenumber);
+</script>
+</body>
+</html>
